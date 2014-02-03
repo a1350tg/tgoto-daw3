@@ -1,0 +1,35 @@
+<h1>Listing tracks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Instrument</th>
+      <th>Score</th>
+      <th>Project</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tracks.each do |track| %>
+      <tr>
+        <td><%= track.name %></td>
+        <td><%= track.instrument %></td>
+        <td><%= track.score %></td>
+        <td><%= track.project.name %></td>
+        <td><%= track.user.name %></td>
+        <td><%= link_to 'Show', track %></td>
+        <td><%= link_to 'Edit', edit_track_path(track) %></td>
+        <td><%= link_to 'Destroy', track, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Track', new_track_path %>
