@@ -5,12 +5,6 @@ Daw3::Application.routes.draw do
 
   resources :users
 
-  get "users/index"
-  post "users/index"
-  get "projects/index"
-  post "projects/index"
-  get "tracks/index"
-  post "tracks/index"
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
